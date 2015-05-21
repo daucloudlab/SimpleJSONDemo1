@@ -1,0 +1,31 @@
+<LinearLayout
+    xmlns:android = "http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:id = "@+id/json_src"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text = ""/>
+    <TextView
+        android:id = "@+id/json_object"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text = ""/>
+    <TextView
+        android:id = "@+id/json_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text = ""/>
+    <TextView
+        android:id = "@+id/json_mysite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text = ""/>
+    <TextView
+        android:id = "@+id/json_myurl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text = ""/>
+</LinearLayout>
