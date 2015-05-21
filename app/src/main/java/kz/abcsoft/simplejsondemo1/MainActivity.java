@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -23,6 +24,7 @@ public class MainActivity extends ActionBarActivity {
         TextView JsonResult = (TextView) findViewById(R.id.json_result);
         TextView JsonMyName = (TextView) findViewById(R.id.json_mysite);
         TextView JsonMyUrl = (TextView) findViewById(R.id.json_myurl);
+        TextView JsonArray = (TextView) findViewById(R.id.json_array) ;
 
         String json_source = getResources().getString(R.string.simple_json) ;
 
@@ -34,10 +36,19 @@ public class MainActivity extends ActionBarActivity {
             String mySiteName = results.getString("sitename") ;
             String myUrl = results.getString("url") ;
 
+            String stringArrayElement = "\n";
+            JSONArray jsonArray = results.getJSONArray("array");
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject arrayElement = jsonArray.getJSONObject(i);
+                stringArrayElement += arrayElement.getString("element") + " " ;
+            }
+
             JsonObject.setText("\njsonObject:\n" + jsonObject.toString());
             JsonResult.setText("\nresults:\n" + results.toString());
             JsonMyName.setText("\nИмя сайта:\n" + mySiteName);
             JsonMyUrl.setText("\nАдрес сайта:\n" + myUrl);
+
+            JsonArray.setText(stringArrayElement);
 
         }catch(JSONException e){
             e.printStackTrace();
